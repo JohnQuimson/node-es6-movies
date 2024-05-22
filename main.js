@@ -216,4 +216,9 @@ class Cart {
     const movieIndex = this.rentItem.indexOf(movie);
     this.rentItem.splice(movieIndex, 1);
   }
+
+  totalPrice() {
+    const price = 3.99;
+    return price * this.rentItem.length;
+  }
 }
