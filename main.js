@@ -86,14 +86,35 @@ const dataInstance = data.map((element) => {
 
 console.log(dataInstance.toString());
 
+// Rating by Genre function
 function RatingByGenre(movies, genre) {
   // filtro i film in base al genere
-  const filterMovie = movies.filter((movies) => {
-    movies.genre === genre;
-  });
+  const filterMovie = movies.filter((movie) => movie.genre === genre);
 
   // somma dei rating
-  const sumRating = filterMovie.reduce((sum, movies) => sum + movies.rating, 0);
+  const sumRating = filterMovie.reduce((sum, movie) => sum + movie.rating, 0);
 
   return sumRating / filterMovie.length;
 }
+
+// Test della funzione
+const averageDramaRating = RatingByGenre(dataInstance, 'Drama');
+const averageScifiRating = RatingByGenre(dataInstance, 'Sci-Fi');
+console.log('');
+console.log(`Media voti per il genere Drama è: ${averageDramaRating}`);
+console.log(`Media voti per il genere Sci-Fi è: ${averageScifiRating}`);
+console.log('');
+
+// Genres list
+function getGenre(array) {
+  const noRepeatGenre = [];
+  array.forEach((element) => {
+    if (!noRepeatGenre.includes(element.genre)) {
+      noRepeatGenre.push(element.genre);
+    }
+  });
+  return noRepeatGenre;
+}
+
+const noRepeatGenre = getGenre(dataInstance);
+console.log('Genres:', noRepeatGenre.toString());
