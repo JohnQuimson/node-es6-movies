@@ -1,5 +1,5 @@
 const data = [
-  { title: 'Jaws', year: 1975, genre: 'Drama', rating: 8, type: 'movie' },
+  { title: 'Titanic', year: 1997, genre: 'Drama', rating: 9, type: 'movie' },
   {
     title: 'Breaking Bad',
     year: 2008,
@@ -31,3 +31,20 @@ const data = [
     type: 'movie',
   },
 ];
+
+class Movie {
+  constructor(title, year, genre, rating, type) {
+    this.title = title;
+    this.year = year;
+    this.genre = genre;
+    this.rating = rating;
+    this.type = type;
+  }
+}
+
+class TvSerie extends Movie {
+  constructor(title, year, genre, rating, type, seasons) {
+    super(title, year, genre, rating, type);
+    this.seasons = seasons;
+  }
+}
