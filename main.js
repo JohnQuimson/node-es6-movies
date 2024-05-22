@@ -32,6 +32,7 @@ const data = [
   },
 ];
 
+// MOVIE
 class Movie {
   constructor(title, year, genre, rating, type) {
     this.title = title;
@@ -46,6 +47,7 @@ class Movie {
   }
 }
 
+// TV SERIES
 class TvSerie extends Movie {
   constructor(title, year, genre, rating, type, seasons) {
     super(title, year, genre, rating, type);
@@ -56,3 +58,30 @@ class TvSerie extends Movie {
     return `${this.title} è una ${this.type} di genere ${this.genre}. La prima stagione è stata rilasciato nel ${this.year} ed in totale sono state prodotte ${this.seasons} stagioni. Ha un voto di ${this.rating}`;
   }
 }
+
+// NEW ARRAY
+const dataInstance = data.map((element) => {
+  // type = movie
+  if (element.type === 'movie') {
+    return new Movie(
+      element.title,
+      element.year,
+      element.genre,
+      element.rating,
+      element.type
+    );
+
+    // type = tv
+  } else if (element.type === 'tv') {
+    return new TvSerie(
+      element.title,
+      element.year,
+      element.genre,
+      element.rating,
+      element.type,
+      element.seasons
+    );
+  }
+});
+
+console.log(dataInstance.toString());
