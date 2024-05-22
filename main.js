@@ -222,3 +222,12 @@ class Cart {
     return price * this.rentItem.length;
   }
 }
+
+const cart = new Cart();
+const titanic = new Movie('Titanic', 1997, 'Drama', 9, 'movie');
+const inception = new Movie('Inception', 2010, 'Sci-Fi', 8.8, 'movie');
+cart.addItem(titanic);
+cart.addItem(inception);
+cart.removeItem(inception);
+
+console.log('Costo totale film: ' + cart.totalPrice() + '€');
