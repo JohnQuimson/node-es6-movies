@@ -40,11 +40,19 @@ class Movie {
     this.rating = rating;
     this.type = type;
   }
+
+  toString() {
+    return `${this.title} è un ${this.type} di genere ${this.genre}. E' stato rilasciato nel ${this.year} ed ha un voto di ${this.rating}`;
+  }
 }
 
 class TvSerie extends Movie {
   constructor(title, year, genre, rating, type, seasons) {
     super(title, year, genre, rating, type);
     this.seasons = seasons;
+  }
+
+  toString() {
+    return `${this.title} è una ${this.type} di genere ${this.genre}. La prima stagione è stata rilasciato nel ${this.year} ed in totale sono state prodotte ${this.seasons} stagioni. Ha un voto di ${this.rating}`;
   }
 }
