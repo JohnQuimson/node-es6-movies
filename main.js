@@ -30,6 +30,44 @@ const data = [
     rating: 8.6,
     type: 'movie',
   },
+
+  {
+    title: 'The Shawshank Redemption',
+    year: 1994,
+    genre: 'Drama',
+    rating: 9.3,
+    type: 'movie',
+  },
+  {
+    title: 'Stranger Things',
+    year: 2016,
+    genre: 'Science Fiction',
+    rating: 8.7,
+    type: 'tv',
+    seasons: 4,
+  },
+  {
+    title: 'The Godfather',
+    year: 1972,
+    genre: 'Crime',
+    rating: 9.2,
+    type: 'movie',
+  },
+  {
+    title: 'The Dark Knight',
+    year: 2008,
+    genre: 'Action',
+    rating: 9.0,
+    type: 'movie',
+  },
+  {
+    title: 'The Witcher',
+    year: 2019,
+    genre: 'Fantasy',
+    rating: 8.2,
+    type: 'tv',
+    seasons: 2,
+  },
 ];
 
 // ---------------------------
@@ -142,7 +180,9 @@ const dataInstance = data.map((element) => {
 });
 
 // ForEach per stampare l'istanza con gli elementi
-dataInstance.forEach((instance) => console.log(instance.toString()));
+dataInstance.forEach((instance, index) =>
+  console.log(index + ' ' + instance.toString())
+);
 console.log('');
 
 // ---------------------------
@@ -161,8 +201,12 @@ function RatingByGenre(movies, genre) {
 const averageDramaRating = RatingByGenre(dataInstance, 'Drama');
 const averageScifiRating = RatingByGenre(dataInstance, 'Sci-Fi');
 
-console.log(`Media voti per il genere Drama è: ${averageDramaRating}`);
-console.log(`Media voti per il genere Sci-Fi è: ${averageScifiRating}`);
+console.log(
+  `Media voti per il genere Drama è: ${averageDramaRating.toFixed(2)}`
+);
+console.log(
+  `Media voti per il genere Sci-Fi è: ${averageScifiRating.toFixed(2)}`
+);
 console.log('');
 
 // ---------------------------
