@@ -36,12 +36,54 @@ const data = [
 // MOVIE
 // ---------------------------
 class Movie {
+  #title;
+  #year;
+  #genre;
+  #rating;
+  #type;
+
   constructor(title, year, genre, rating, type) {
-    this.title = title;
-    this.year = year;
-    this.genre = genre;
-    this.rating = rating;
-    this.type = type;
+    this.#title = title;
+    this.#year = year;
+    this.#genre = genre;
+    this.#rating = rating;
+    this.#type = type;
+  }
+
+  //title
+  get title() {
+    return this.#title;
+  }
+  set title(title) {
+    this.#title = title;
+  }
+  //year
+  get year() {
+    return this.#year;
+  }
+  set year(year) {
+    this.#year = year;
+  }
+  //genre
+  get genre() {
+    return this.#genre;
+  }
+  set genre(genre) {
+    this.#genre = genre;
+  }
+  //rating
+  get rating() {
+    return this.#rating;
+  }
+  set rating(rating) {
+    this.#rating = rating;
+  }
+  //type
+  get type() {
+    return this.#type;
+  }
+  set type(type) {
+    this.#type = type;
   }
 
   toString() {
@@ -53,9 +95,18 @@ class Movie {
 // TV SERIES
 // ---------------------------
 class TvSerie extends Movie {
+  #seasons;
+
   constructor(title, year, genre, rating, type, seasons) {
     super(title, year, genre, rating, type);
-    this.seasons = seasons;
+    this.#seasons = seasons;
+  }
+
+  get seasons() {
+    return this.#seasons;
+  }
+  set seasons(seasons) {
+    this.#seasons = seasons;
   }
 
   toString() {
