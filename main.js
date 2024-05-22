@@ -198,3 +198,22 @@ function filterByGenre(movies, genre) {
 const ScifiMovies = filterByGenre(dataInstance, 'Sci-Fi');
 console.log('Film di genere Sci-Fi:', ScifiMovies);
 console.log('');
+
+// ---------------------------
+// CART
+// ---------------------------
+class Cart {
+  constructor() {
+    this.rentItem = [];
+  }
+
+  addItem(movie) {
+    this.rentItem.push(movie);
+  }
+
+  removeItem(movie) {
+    //mi ricavo l'indice del film da rimuovere
+    const movieIndex = this.rentItem.indexOf(movie);
+    this.rentItem.splice(movieIndex, 1);
+  }
+}
