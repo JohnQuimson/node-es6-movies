@@ -85,3 +85,15 @@ const dataInstance = data.map((element) => {
 });
 
 console.log(dataInstance.toString());
+
+function RatingByGenre(movies, genre) {
+  // filtro i film in base al genere
+  const filterMovie = movies.filter((movies) => {
+    movies.genre === genre;
+  });
+
+  // somma dei rating
+  const sumRating = filterMovie.reduce((sum, movies) => sum + movies.rating, 0);
+
+  return sumRating / filterMovie.length;
+}
